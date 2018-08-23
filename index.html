@@ -20,82 +20,115 @@
 
 <body>
     <div class="charSelect">
-    <h3>SELECT YOUR CHARACTER</h3>
+        <h3>SELECT YOUR CHARACTER</h3>
     </div>
     <div class="enemySelect">
         <h3>SELECT YOUR ENEMY</h3>
     </div>
-        <!--Select Character Row-->
+    <!--Select Character Row-->
+    <div class="container">
         <div class="row">
-            <div class="col-2">
-                <div class="card sa" style="width: 15rem;">
+            <div class="col">
+                <div class="card sa player" style="width: 15rem;" data-value="sa">
                     <img class="card-img-top" src="../rpg-game/assets/images/scsa.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h6 class="card-title">Stone Cold Steve Austin
-                            </h5>
-                            <p class="card-text health">200</p>
+                        <h6 class="card-title">
+                        </h6>
+                        <p class="card-text health"></p>
                     </div>
                 </div>
             </div>
-            <div class="col-2">
-                <div class="card rr" style="width: 15rem;">
+            <div class="col">
+                <div class="card rr player" style="width: 15rem;" data-value="rr">
                     <img class="card-img-top" src="../rpg-game/assets/images/razor.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h6 class="card-title">Razor Ramon
-                            </h5>
-                            <p class="card-text">160</p>
+                        <h6 class="card-title">
+                        </h6>
+                        <p class="card-text"></p>
                     </div>
                 </div>
             </div>
-            <div class="col-2">
-                <div class="card ut" style="width: 15rem;">
+            <div class="col">
+                <div class="card ut player" style="width: 15rem;" data-value="ut">
                     <img class="card-img-top" src="../rpg-game/assets/images/undertaker.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h6 class="card-title">The Undertaker
-                            </h5>
-                            <p class="card-text">180</p>
+                        <h6 class="card-title">
+                        </h6>
+                        <p class="card-text"></p>
                     </div>
                 </div>
             </div>
-            <div class="col-2">
-                <div class="card bs" style="width: 15rem;">
+            <div class="col">
+                <div class="card bs player" style="width: 15rem;" data-value="bs">
                     <img class="card-img-top" src="../rpg-game/assets/images/bigshow.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h6 class="card-title">The Big Show
-                            </h5>
-                            <p class="card-text">220</p>
+                        <h6 class="card-title"></h6>
+                        <p class="card-text"></p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!--Attack Button-->
-        <button type="button" class="btn btn-danger">Attack</button>
+    <!--Attack Button-->
 
-        <!--Fight Row-->
-        <!---PlaceHolder Card-->
+
+    <!--Fight Row-->
+    <!---PlaceHolder Card-->
+    <div class="container">
+
+
         <div class="row">
-            <div class="col-2">
-                <div class="card ph" style="width: 15rem;">
+            <div class="col">
+                <div class="card daOne" style="width: 15rem;" data-value="sa">
                     <img class="card-img-top" src="../rpg-game/assets/images/placeholder.png" alt="Card image cap">
                     <div class="card-body">
-                        <h6 class="card-title">Who will be next?
-                            </h5>
-                            <p class="card-text"></p>
+                        <h6 class="card-title">
+                        </h6>
+                        <p class="card-text health"></p>
                     </div>
                 </div>
             </div>
 
+            <div class="col">
+                <div class="card playerSpot" style="width: 15rem;" data-value="rr">
+                    <img class="card-img-top" src="../rpg-game/assets/images/placeholder.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title">Character Select
+                        </h6>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+            
+            <div class="card enemySpot" style="width: 15rem;" data-value="ut">
+                <img class="card-img-top" src="../rpg-game/assets/images/placeholder.png" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">Enemy Select
+                    </h6>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+            </div>
 
-
-
-
-
-        </div>
-
-
-
-
+            <div class="col">
+                <div class="card daTwo" style="width: 15rem;" data-value="bs">
+                    <img class="card-img-top" src="../rpg-game/assets/images/placeholder.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"></h6>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        
+            <button type="button" class="btn btn-danger">Attack</button>
+            <button type="button" class="btn btn-warning">Restart</button>      
+    </div>
+    
+   
+    
 </body>
 
 
