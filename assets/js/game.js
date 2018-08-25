@@ -83,8 +83,7 @@ $(document).ready(function () {
             $(".playerSpot .card-img-top").attr("src", Characters[playerChoose].imageUrl);
             document.querySelector('.playerSpot .card-title').innerText = Characters[playerChoose].name;
             document.querySelector('.playerSpot .card-text').innerText = Characters[playerChoose].health;
-            $(playerChoose).addClass(".hero");
-            $(enemyChoose).addClass(".villain");
+            
 
         }
 
