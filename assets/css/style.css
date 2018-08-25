@@ -44,6 +44,17 @@ margin:0;
    
 }
 
+.actionBox {
+font-size: large;
+border: 3px solid darkblue;
+display:none;
+height: 120px;
+background-color:whitesmoke;
+margin:10px;
+padding:5px;
+
+}
+
 
 
 .card{
@@ -59,7 +70,9 @@ opacity: 0.7;
 }
 
 .card.daOne,
-.card.daTwo {
+.card.daTwo,
+.card.enemySpot,
+.card.playerSpot {
 display:none;
 
 }

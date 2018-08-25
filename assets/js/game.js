@@ -1,4 +1,4 @@
-
+// Create Characters as Objects
 let Characters = {
     'sa': {
         name: 'Stone Cold Steve Austin',
@@ -33,21 +33,16 @@ let Characters = {
 
 }
 
+
+//Variables
 let playerChoose;
 let enemyChoose;
 let deadArray;
-enemyCount=3;
-
-
-
-
+let enemyCount = 3;
 
 
 //Start Game
 $(document).ready(function () {
-
-
-
 
 
     //Display Name and Health
@@ -66,63 +61,102 @@ $(document).ready(function () {
 
 
 
+
     $(".card").click(function () {
 
 
         if (playerChoose != null) {
             $(".enemySelect h3").show();
-            $(".card.ph.enemy").show();
-            enemyChoose = $(this).data("value");
+
+            $('.player').css('opacity', '.5');
+            $('.player').detach().appendTo('.daTwo');
+            $(".enemySpot").show();
+            $(".playerSpot").show();
             $(".btn").show();
-             $(".enemySpot .card-img-top").attr("src", Characters[enemyChoose].imageUrl);
+            $(".actionBox").show();
+            $(".enemySelect h3").hide();
+            enemyChoose = $(this).data("value");
+            $(this).detach().appendTo('.daOne');
+            $(".enemySpot .card-img-top").attr("src", Characters[enemyChoose].imageUrl);
             document.querySelector('.enemySpot .card-title').innerText = Characters[enemyChoose].name;
             document.querySelector('.enemySpot .card-text').innerText = Characters[enemyChoose].health;
             $(".playerSpot .card-img-top").attr("src", Characters[playerChoose].imageUrl);
             document.querySelector('.playerSpot .card-title').innerText = Characters[playerChoose].name;
             document.querySelector('.playerSpot .card-text').innerText = Characters[playerChoose].health;
-            $(".enemySelect h3").hide();
-            $(this).detach().appendTo('.daOne');
-            $('.player').css('opacity', '.5');
-            $('.player').detach().appendTo('.daTwo');
+            $(playerChoose).addClass(".hero");
+            $(enemyChoose).addClass(".villain");
+
         }
-    
-    //Select a Character
+
+        //Select a Character
         if (playerChoose == null) {
             $(".charSelect").hide();
             $(".enemySelect h3").show();
             $(this).css('border', 'solid 2px yellow');
             $(this).css('opacity', '.7');
-            $(".card.ph").show();
             playerChoose = $(this).data("value");
             $(this).detach().appendTo('.daOne');
+
+
         }
+
+    });
+
+
+    //Click Reset
+    $(".rst").click(function () {
+        location.reload(true);
     });
 
 
     //Click Attack
+
+    $(".atk").click(function () {
+        if (playerChoose != null || enemyChoose != null) {
+            
+            Characters[enemyChoose].health -= Characters[playerChoose].attack;
+            console.log(Characters[enemyChoose].health);
+            Characters[playerChoose].health -= Characters[enemyChoose].counter;
+            console.log(Characters[playerChoose].health);
+            document.querySelector('.enemySpot .card-text').innerText = Characters[enemyChoose].health;
+            document.querySelector('.playerSpot .card-text').innerText = Characters[playerChoose].health;
+            Characters[playerChoose].attack + Characters[playerChoose].attack;
+            console.log(Characters[playerChoose].attack += Characters[playerChoose].attack);
+
+
+        }
+
+        document.querySelector('.actionBox').innerText = "You attacked " + Characters[enemyChoose].name + " for " + Characters[playerChoose].attack + " damage!!" + " You were counter-attacked by " + Characters[enemyChoose].name + " for " + Characters[enemyChoose].counter + " damage! ";
+
+        if (Characters[playerChoose].health <= 0) {
+            document.querySelector('.actionBox').innerText = "You were knocked TF out! Hit Restart to Play Again! ";
+    
+        }
+    
+        else if (Characters[enemyChoose].health <= 0) {
+            document.querySelector('.actionBox').innerText = "You knocked out " + Characters[enemyChoose].name + "! Select a new Enemy!";
+            enemyCount--;
+            $(".enemySelect h3").show();
+            console.log(enemyChoose);
+            $(".enemySpot").hide();
+            
+    
+        }
+
+
+
+
+    })
+
+    
+
+
+
     //Display actions in container
     //If the enemy wins, allow restart
     //If player wins, eliminate opponent
     //Player selects new opponent, repeat;
     //If player beats all opponents, Player Wins
-
-
-
-
-    //Store which Character was clicked
-    /*
-    $('.card.sa').click(function(){
-        $(this).data('clicked',true);
-    });
-    $('.card.ut').click(function(){
-        $(this).data('clicked',true);
-    });
-    $('.card.rr').click(function(){
-        $(this).data('clicked',true);
-    });
-    $('.card.bs').click(function(){
-        $(this).data('clicked',true);
-    });*/
 
 
     //Gray out unselected Opponent
